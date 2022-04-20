@@ -1,4 +1,7 @@
 def build(gen, env):
+    if env['PLATF'] != 'kachel':
+        return
+
     env = env.clone()
 
     env['CPPPATH'] += [
