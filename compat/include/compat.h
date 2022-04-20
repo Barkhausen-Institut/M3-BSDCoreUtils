@@ -36,7 +36,7 @@
 #include <sys/stat.h>
 #endif
 
-#ifdef __linux__
+#if defined __linux__ || defined __m3__
 #include <stddef.h>
 #include <string.h>
 #include <sys/stat.h>
@@ -146,7 +146,9 @@ int fmt_scaled (long long, char *);
 char *getbsize (int *, long *);
 
 /* devname.c */
-#ifndef __MINGW32__
+#if defined __m3__
+#define devname(a, b) NULL
+#elif !defined __MINGW32__
 char *devname (dev_t, mode_t);
 #endif 
 
@@ -203,7 +205,7 @@ size_t strlcpy (char *, const char *, size_t);
 #define FMT_SCALED_STRSIZE 7 /* minus sign, 4 digits, suffix, null byte */
 
 /* Buffer sizes */
-#if defined (__linux__) || defined (__APPLE__)
+#if defined (__linux__) || defined (__APPLE__) || defined(__m3__)
 #define _PW_BUF_LEN sysconf (_SC_GETPW_R_SIZE_MAX)
 #define _GR_BUF_LEN sysconf (_SC_GETGR_R_SIZE_MAX)
 #endif
@@ -217,7 +219,7 @@ size_t strlcpy (char *, const char *, size_t);
 /* Linux spelling differences 
  * And Windows too :p
 */
-#if defined (__linux__) || defined (__MINGW32__)
+#if defined (__linux__) || defined (__MINGW32__) || defined(__m3__)
 #define S_ISTXT S_ISVTX
 #endif
 
