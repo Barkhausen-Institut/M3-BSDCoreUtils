@@ -208,7 +208,7 @@ nexttoken(int pat)
 	return;
 }
 
-void
+__attribute__((noreturn)) void
 error(void)
 {
 	errx(2, "syntax error");

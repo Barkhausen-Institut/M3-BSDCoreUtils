@@ -209,7 +209,7 @@ main(int argc, char *argv[])
 	return res;
 }
 
-static void
+__attribute__((noreturn)) static void
 syntax(const char *op, char *msg)
 {
 	if (op && *op)
