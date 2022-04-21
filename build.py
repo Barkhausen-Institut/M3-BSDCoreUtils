@@ -41,8 +41,8 @@ def build(gen, env):
     dirs = [
         'basename', 'cat', 'cp', 'csplit', 'cut', 'date', 'dd', 'dirname', 'du', 'echo',
         'expr', 'factor', 'false', 'fmt', 'head', 'join', 'ln', 'ls', 'mkdir', 'mktemp',
-        'mv', 'nl', 'paste', 'pathchk', 'printf', 'pwd', 'rm', 'rmdir', 'sleep', 'split', 'stat',
-        'sync', 'tee', 'test', 'touch', 'tr', 'true', 'tsort', 'uniq', 'wc', 'yes'
+        'mv', 'nl', 'paste', 'pathchk', 'printenv', 'printf', 'pwd', 'rm', 'rmdir', 'sleep',
+        'split', 'stat', 'sync', 'tee', 'test', 'touch', 'tr', 'true', 'tsort', 'uniq', 'wc', 'yes'
     ]
     for d in dirs:
         env.m3_exe(gen, out = d, ins = env.glob('src/' + d + '/*.c'), libs = ['bsdutils'])
