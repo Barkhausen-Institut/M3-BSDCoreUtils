@@ -22,6 +22,7 @@ def build(gen, env):
         # disable warnings
         '-Wno-sign-compare',
         '-Wno-sign-conversion',
+        '-Wno-int-conversion',
         '-Wno-unused-parameter',
         '-Wno-missing-field-initializers',
         '-Wno-format',
@@ -40,7 +41,7 @@ def build(gen, env):
 
     dirs = [
         'basename', 'cat', 'cp', 'csplit', 'cut', 'date', 'dd', 'dirname', 'du', 'echo',
-        'expr', 'factor', 'false', 'fmt', 'head', 'join', 'ln', 'ls', 'mkdir', 'mktemp',
+        'expr', 'factor', 'false', 'find', 'fmt', 'head', 'join', 'ln', 'ls', 'mkdir', 'mktemp',
         'mv', 'nl', 'paste', 'pathchk', 'printenv', 'printf', 'pwd', 'rm', 'rmdir', 'sleep',
         'split', 'stat', 'sync', 'tee', 'test', 'touch', 'tr', 'true', 'tsort', 'uniq', 'wc', 'yes'
     ]
