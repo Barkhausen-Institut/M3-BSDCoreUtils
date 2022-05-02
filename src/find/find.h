@@ -36,6 +36,7 @@
 
 #include <regex.h>
 #include <time.h>
+#include <stdint.h>
 
 #define SECSPERMIN 60
 #define SECSPERDAY (24 * 60 * SECSPERMIN)
