@@ -50,9 +50,9 @@
 
 #define DEF_FORMAT \
 	"%d %i %Sp %l %Su %Sg %r %z \"%Sa\" \"%Sm\" \"%Sc\" " \
-	"%k %b %#Xf %N"
+	"%k %b %N"
 #define RAW_FORMAT	"%d %i %#p %l %u %g %r %z %a %m %c " \
-	"%k %b %f %N"
+	"%k %b %N"
 #define LS_FORMAT	"%Sp %l %Su %Sg %Z %Sm %N%SY"
 #define LSF_FORMAT	"%Sp %l %Su %Sg %Z %Sm %N%T%SY"
 #define SHELL_FORMAT \
