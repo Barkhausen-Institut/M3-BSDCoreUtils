@@ -193,9 +193,9 @@ forward(struct tailfile *tf, int nfiles, enum STYLE style, off_t origoff)
 				warn("epoll_wait");
 				return;
 		}
-		ctf = (struct tailfile*) events[i].data.ptr;
+		ctf = (struct tailfile*) events[0].data.ptr;
 		if (nevents > 0) {
-			if (events[i].events & EPOLLIN) {
+			if (events[0].events & EPOLLIN) {
 				if (ctf != ltf) {
 					printfname(ctf->fname);
 					ltf = ctf;
@@ -210,7 +210,7 @@ forward(struct tailfile *tf, int nfiles, enum STYLE style, off_t origoff)
 				}
 				(void)fflush(stdout);
 				clearerr(ctf->fp);
-			} else if ((events[i].events & EPOLLPRI) || (events[i].events & EPOLLERR) || (events[i].events & EPOLLHUP)) {
+			} else if ((events[0].events & EPOLLPRI) || (events[0].events & EPOLLERR) || (events[0].events & EPOLLHUP)) {
 					/*
 					 * File was deleted or renamed.
 					 *
