@@ -15,6 +15,7 @@ def build(gen, env):
         '-DDEFFILEMODE="(S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH)"',
         '-DREG_STARTEND=0',
         '-DS_BLKSIZE=512',
+        '-DHAVE___PROGNAME',
     ]
 
     env['CFLAGS'] += [
@@ -24,6 +25,8 @@ def build(gen, env):
         '-Wno-sign-conversion',
         '-Wno-int-conversion',
         '-Wno-unused-parameter',
+        '-Wno-unused-but-set-variable',
+        '-Wno-unused-variable',
         '-Wno-missing-field-initializers',
         '-Wno-format',
         '-Wno-missing-braces',
