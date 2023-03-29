@@ -36,7 +36,7 @@ def build(gen, env):
     libfiles += env.glob(gen, 'compat/m3/*.c')
     libfiles += ['compat/darwin/reallocarray.c']
     libfiles += ['compat/linux/setmode.c']
-    lib = env.static_lib(gen, out = 'bsdutils', ins = libfiles)
+    lib = env.static_lib(gen, out='bsdutils', ins=libfiles)
     env.install(gen, env['LIBDIR'], lib)
 
     dirs = [
@@ -45,4 +45,4 @@ def build(gen, env):
         'sync', 'tail', 'tee', 'test', 'tr', 'uniq', 'wc'
     ]
     for d in dirs:
-        env.m3_exe(gen, out = d, ins = env.glob(gen, 'src/' + d + '/*.c'), libs = ['bsdutils'])
+        env.m3_exe(gen, out=d, ins=env.glob(gen, 'src/' + d + '/*.c'), libs=['bsdutils'])
