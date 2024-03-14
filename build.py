@@ -30,6 +30,7 @@ def build(gen, env):
         '-Wno-implicit-fallthrough',
         '-Wno-enum-compare',
         '-Wno-parentheses',
+        '-Wno-use-after-free',
     ]
 
     libfiles = env.glob(gen, 'compat/common/*.c')
